@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:300&display=swap");
+
+* {
+  box-sizing: border-box;
+  /* border:1px dashed white; */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  transition: all 0.5s ease-in;
+  background-color: #000;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+#about{
+    padding:7vw;
+}
+#about h1{
+  /* border:2px solid red; */
+  margin-bottom:-10px;
+}
+.linebreak{
+  width:10%;
+  height:3px;
+  background-color: rgba(119, 0, 0, 0.9);
+}
+#home {
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.header {
+  font-size: 34px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 3vh;
+  color: white;
+  min-width: 100vw;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  z-index: 1;
+}
+.navbar-links {
+  display: flex;
+  gap: 3vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 4vh;
+  justify-content: center;
+  z-index: 2;
+}
+button:hover {
+  background-color: #aaaaaa64;
+}
+
+button {
+  font-family: "Times New Roman", Times, serif;
+  background: none;
+  border-radius: 30px;
+  min-width: 80px;
+  height: 30px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.toggle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clock {
+  position: relative;
+  width: 35vw;
+  height: 35vw;
+  background-color: black;
+  border-radius: 50%;
+  box-shadow: 0 0 20vh rgba(119, 0, 0, 0.5), 0 0 100vw rgb(56, 0, 0),
+    inset 0 0 2vw rgb(80, 0, 0, 0.5);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.clock:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20vw rgba(119, 0, 0, 0.6), 0 0 100vw rgb(69, 0, 0),
+    inset 0 0 2vw rgb(80, 0, 0, 0.7);
+}
+.n {
+  text-shadow: 0 0 5px white;
+  font-size: 2vw;
+  position: absolute;
+  top: 0;
+  color: #fff;
+  /* transform-origin:center; */
+}
+
+.twelve {
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.three {
+  top: 50%;
+  right: 5%;
+}
+.six {
+  top: 88%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.nine {
+  top: 50%;
+  left: 5%;
+}
+.needle {
+  background-color: white;
+  box-shadow: 0 0 2vh rgba(255, 255, 255, 0.433);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 10vw;
+  width: 0.2vh;
+  transform-origin: bottom center;
+  transition: all 0.5s ease-in;
+}
+
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+  width: 0.4vh;
+}
+
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 12vw;
+}
+
+.needle.second {
+  background-color: #e74c3c;
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 11vw;
+}
+
+.center-point {
+  background-color: #e74c3c;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.time {
+  text-shadow: 0 0 2vh rgba(255, 255, 255, 0.433);
+  padding-top: 2vh;
+  font-size: 60px;
+}
+
+.date {
+  text-shadow: 0 0 2vh rgba(255, 255, 255, 0.433);
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: 5.5px;
+  text-transform: uppercase;
+}
+
+/* .date .circle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 18px;
+  transition: all 0.5s ease-in;
+} */
+#about div{
+  margin-top:30px;
+  font-size: 20px;
+  color: #aaa;
+}
+
+@media only screen and (max-width: 987px) {
+  .header {
+    position: fixed;
+    top: 0;
+    text-align: center;
+    height:140px;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(10px);
+
+  }
+  #about{
+    padding:8vw;
+  }
+  .needle{
+    height:15vw;
+  }
+  .needle.hour {
+
+    width: 0.4vh;
+  }
+  
+  .needle.minute {
+
+    height: 20vw;
+  }
+  
+  .needle.second {
+
+    height: 20vw;
+  }
+  .navbar-links {
+    top: 1%;
+    left:50%;
+    transform:translate(-50%,50%);
+  }
+  .clock {
+    position: relative;
+    width: 60vw;
+    height: 60vw;
+    margin-top:15vw;
+}
+.n{
+  font-size: 3vw;
+}
+}
+@media only screen and (max-width: 412px){
+   .clock{
+    width:70vw;
+    height:70vw;
+    }
+    .n{
+  font-size: 4vw;
+}
+}
